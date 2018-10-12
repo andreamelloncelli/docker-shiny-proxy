@@ -1,6 +1,6 @@
 proxy:
   port: 8080
-  authentication: simple
+  authentication: none
   admin-groups: admins
   users:
   - name: jack
@@ -8,20 +8,21 @@ proxy:
     groups: admins
   - name: jeff
     password: password
-  container-backend: kubernetes
-  kubernetes:
-    internal-networking: true
-    url: http://localhost:8001
+  docker:
+      internal-networking: true
   specs:
   - id: 01_hello
     display-name: Hello Application
     description: Application which demonstrates the basics of a Shiny app
     container-cmd: ["R", "-e", "shinyproxy::run_01_hello()"]
     container-image: openanalytics/shinyproxy-demo
+    container-network: sp-example-net
   - id: 06_tabsets
     container-cmd: ["R", "-e", "shinyproxy::run_06_tabsets()"]
     container-image: openanalytics/shinyproxy-demo
+    container-network: sp-example-net
 
 logging:
   file:
     shinyproxy.log
+
