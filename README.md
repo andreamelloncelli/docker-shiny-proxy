@@ -18,6 +18,8 @@ Isolated shiny-proxy server with a specific version of the software.
 
 ## Run
 
+Simple test:
+
 	docker run \
 	  --rm \
 	  -v /var/run/docker.sock:/var/run/docker.sock \
@@ -25,6 +27,17 @@ Isolated shiny-proxy server with a specific version of the software.
 	  --net sp-example-net \
 	  -p 8080:8080 \
 	  shinyproxy:v-2.0.2
+
+Production example
+
+	docker run \
+	  -d \
+	  -v /var/run/docker.sock:/var/run/docker.sock \
+	  -v /data/shiny/:/opt/shinyproxy/config/ \
+	  --net sp-example-net \
+	  -p 8080:8080 \
+	  --name shiny-proxy \
+	  akiro/docker-shiny-proxy:v-2.0.2
 
 # Source
 

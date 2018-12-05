@@ -2,6 +2,7 @@ proxy:
   port: 8080
   authentication: none
   admin-groups: admins
+  hide-navbar: true
   users:
   - name: jack
     password: password
@@ -17,10 +18,12 @@ proxy:
     container-cmd: ["R", "-e", "shinyproxy::run_01_hello()"]
     container-image: openanalytics/shinyproxy-demo
     container-network: sp-example-net
+    # container-volumes: [ "/data/proj-1:/data/proj-1" ]
   - id: 06_tabsets
     container-cmd: ["R", "-e", "shinyproxy::run_06_tabsets()"]
     container-image: openanalytics/shinyproxy-demo
     container-network: sp-example-net
+  container-log-path: ./config/container-logs
 
 logging:
   file:
