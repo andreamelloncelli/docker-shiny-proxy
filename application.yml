@@ -2,6 +2,7 @@ proxy:
   port: 8080
   authentication: none
   admin-groups: admins
+  hide-navbar: true
   users:
   - name: jack
     password: password
@@ -17,9 +18,8 @@ proxy:
     container-cmd: ["R", "-e", "shinyproxy::run_01_hello()"]
     container-image: openanalytics/shinyproxy-demo
     container-network: sp-example-net
-  - id: 06_tabsets
-    container-cmd: ["R", "-e", "shinyproxy::run_06_tabsets()"]
-    container-image: openanalytics/shinyproxy-demo
+  - id: 01_probeshinyapp
+    container-image: akiro/example-probeshinyapp
     container-network: sp-example-net
 
 logging:
