@@ -14,7 +14,7 @@ Isolated shiny-proxy server with a specific version of the software.
 
 ## Build
 
-	docker build . -t shinyproxy:v-2.0.2
+	docker build . -t shinyproxy:v-2.6.1
 
 ## Run
 
