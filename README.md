@@ -26,7 +26,7 @@ Simple test:
 	  -v "$(pwd)":/opt/shinyproxy/config/ \
 	  --net sp-example-net \
 	  -p 8080:8080 \
-	  shinyproxy:v-2.0.2
+	  shinyproxy:v-2.6.1
 
 Production example
 
@@ -37,7 +37,7 @@ Production example
 	  --net sp-example-net \
 	  -p 8080:8080 \
 	  --name shiny-proxy \
-	  akiro/docker-shiny-proxy:v-2.0.2
+	  akiro/docker-shiny-proxy:v-2.6.1
 
 # Source
 
