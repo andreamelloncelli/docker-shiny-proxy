@@ -2,7 +2,7 @@ proxy:
   port: 8080
   authentication: none
   admin-groups: admins
-  hide-navbar: true
+  hide-navbar: false
   users:
   - name: jack
     password: password
